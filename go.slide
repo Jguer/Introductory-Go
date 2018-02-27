@@ -1,0 +1,420 @@
+The Go programming language
+Instituto Superior Técnico, 28 February
+
+[[http://web.ist.utl.pt/joao.leao.guerreiro/][João Guerreiro]]
+[[hackerschool.io][HackerSchool]]
+
+me@jguer.space
+
+* Outline
+
+1. Setup
+2. What is Go
+3. The Basics
+4. Practical Exercises
+5. A little further
+6. Misc
+
+# Based on talk presented at [[http://javasig.com][NYJavaSIG]] on April 23, 2015.
+# The next several slides are from rsc's 2013/distsys and 2015/mit talks.
+# Uses many snippets from Go by Example.
+
+* Workstation Setup
+.link https://play.golang.org/
+.iframe https://play.golang.org/
+.link http://cmder.net/
+# tinyurl
+
+.link https://golang.org/dl/
+Editors:
+- Atom
+- Sublime
+- Vim (Vim-go)
+- Emacs
+
+* What is Go?
+
+"Go is an open source programming language that makes it easy to build simple, reliable, and efficient software."
+
+.link http://golang.org
+.image ./go/img/gopher.svg
+
+* History
+
+Design began in late 2007.
+
+- Robert Griesemer, Rob Pike (UTF-8), and Ken Thompson (B).
+- Ian Lance Taylor and Russ Cox.
+
+Open source since 2009 with a very active community.
+
+Language stable as of Go 1, early 2012.
+
+* Why Go?
+
+.image ./go/img/funfast.svg
+
+* Who uses Go besides Google?
+
+.link http://golang.org/wiki/GoUsers
+
+Apcera, Bitbucket, bitly, Canonical, CloudFlare, Core OS, Digital Ocean, Docker, Dropbox, Facebook, Getty Images, GitHub, Heroku, Iron.io, Kubernetes, Medium, MongoDB services, Mozilla services, New York Times, pool.ntp.org, Secret, SmugMug, SoundCloud, Stripe, Square, Thomson Reuters, Tumblr, ...
+
+* Go intentionally leaves out many features
+
+- No classes
+- No constructors
+- No inheritance
+- No exceptions
+- No annotations
+- No user-defined generics
+
+* Why does Go leave out those features?
+
+Clarity is critical.
+
+When reading code, it should be clear what the program will do.
+
+When writing code, it should be clear how to make the program do what you want.
+
+Sometimes this means writing out a loop instead of invoking an obscure function.
+
+For more background on design:
+
+- [[http://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html][Less is exponentially more (Pike, 2012)]]
+- [[http://talks.golang.org/2012/splash.article][Go at Google: Language Design in the Service of Software Engineering (Pike, 2012)]]
+
+* Basics
+
+* Data types
+.play -edit ./go/code/datatypes.go
+
+* Data types
+.play -edit ./go/code/datatypes2.go
+
+* Data types
+.play -edit ./go/code/datatypes3.go
+
+* Flow Control
+* if
+.play -edit ./go/code/flow0.go /START1/,/STOP1/
+
+* if
+  ==    equal
+  !=    not equal
+  <     less
+  <=    less or equal
+  >     greater
+  >=    greater or equal
+
+* for
+.play -edit ./go/code/flow1.go /START1/,/STOP1/
+
+* for
+  continue    skip
+  break       exit cycle
+
+* while
+.play -edit ./go/code/flow2.go /START1/,/STOP1/
+
+* switch
+.play -edit ./go/code/flow3.go /START1/,/STOP1/
+
+* switch
+  fallthrough
+
+* Advanced Datatypes
+* Arrays
+.play -edit ./go/code/arrays.go /START1/,/STOP1/
+
+* Slices
+.play -edit ./go/code/slices.go /START1/,/STOP1/
+
+* Slices
+.play -edit ./go/code/slices.go /START2/,/STOP2/
+
+* Maps
+.play -edit ./go/code/maps.go /START1/,/STOP1/
+
+* Maps
+.play -edit ./go/code/maps.go /START2/,/STOP2/
+
+* Range
+.play -edit ./go/code/range.go /START1/,/STOP1/
+
+* Range
+.play -edit ./go/code/range.go /START2/,/STOP2/
+
+* Range
+.play -edit ./go/code/range.go /START3/,/STOP3/
+
+* Range
+.play -edit ./go/code/range.go /START4/,/STOP4/
+
+* Detail
+.image ./go/img/table.png _ 800
+
+* Review time
+* Review time
+Basic Structure
+.code ./go/code/review.go /START1/,/STOP1/
+
+* Review time
+Types
+.code ./go/code/review.go /START2/,/STOP2/
+
+* Review time
+Arrays
+.code ./go/code/review.go /START3/,/STOP3/
+
+* Review time
+Slices
+.code ./go/code/review.go /START4/,/STOP4/
+
+* Review time
+Flow Control
+.code ./go/code/review.go /START5/,/STOP5/
+
+* Exercise time
+* Exercise time
+1.
+Write a program that prints numbers from 12 to 0 unless it's 4, 2 or 10
+Example output:
+
+  i = 12
+  i = 11
+  i = 9
+  i = 8
+  i = 7
+  i = 6
+  i = 5
+  i = 3
+  i = 1
+  i = 0
+
+* Solved
+* Exercise time
+1.
+.play ./go/exercises/1.go /START1/,/STOP1/
+
+* Exercise time
+1.
+.play ./go/exercises/1.go /START2/,/STOP2/
+
+* Exercise time
+1.
+.play ./go/exercises/1.go /START3/,/STOP3/
+
+* Exercise time
+2.
+Write a program with an array or slice with the following words: "Gate", "Comet" and "Pizza".
+Print the first character of the word if the word contains the letter e.
+Example Output:
+
+  [Gate Comet Pizza]
+  Found one! G
+  Found one! C
+
+* Solved
+* Exercise time
+2.
+.play ./go/exercises/2.go /START1/,/STOP1/
+
+* Exercise time
+2.
+.play ./go/exercises/2.go /START2/,/STOP2/
+
+* Exercise time
+2.
+.play ./go/exercises/2.go /START3/,/STOP3/
+
+* Exercise time
+3.
+.code ./go/exercises/3.go /START0/,/STOP0/
+
+* Exercise time
+3.
+Use a map of type int-string to save a dictionary of number names.
+From a random number generator (from 0 to 999) print each number in words.
+Example output:
+
+  Random Number: 831
+  Converted: eight three one
+
+* Solved
+* Exercise time
+3.
+.play ./go/exercises/3.go /START1/,/STOP1/
+
+* Exercise time
+3.
+.play ./go/exercises/3.go /START2/,/STOP2/
+
+* Functions
+* Functions
+.play -edit ./go/code/functions1.go /START1/,/STOP1/
+
+* Functions
+.play -edit ./go/code/functions1_1.go /START1/,/STOP1/
+
+* Functions
+.play -edit ./go/code/functions2.go
+
+* Functions
+.play -edit ./go/code/functions3.go /START1/,/STOP1/
+
+* Functions
+.play -edit ./go/code/functions4.go /START1/,/STOP1/
+
+* Functions
+.play -edit ./go/code/functions5.go /START1/,/STOP1/
+
+* Reference
+- slice
+- map
+- channel
+- pointer
+- function
+
+* Structs
+.play -edit ./go/code/structs1.go /START1/,/STOP1/
+
+* Structs
+.play -edit ./go/code/structs2.go /START1/,/STOP1/
+
+* Structs and pointers
+.play -edit ./go/code/structs2.go /START2/,/STOP2/
+
+* Methods
+.play -edit ./go/code/methods1.go /START1/,/STOP1/
+
+* Methods
+.play -edit ./go/code/methods2.go /START1/,/STOP1/
+
+* Fetch the search results
+
+* Communicating Sequential Processes (Hoare, 1978)
+
+Concurrent programs are structured as independent processes that
+execute sequentially and communicate by passing messages.
+
+Sequential execution is easy to understand.  Async callbacks are not.
+
+*Go*primitives:* goroutines, channels, and the `select` statement.
+
+* Goroutines
+
+"Don't communicate by sharing memory, share memory by communicating."
+
+Goroutines are like lightweight threads.
+
+They start with tiny stacks and resize as needed.
+
+Go programs can have hundreds of thousands of them.
+
+Start a goroutine using the `go` statement:
+
+  go f(args)
+
+The Go runtime schedules goroutines onto OS threads.
+
+Blocked goroutines don't use a thread.
+
+* Channels
+
+Channels provide communication between goroutines.
+
+  c := make(chan string)
+
+  // goroutine 1
+  c <- "hello!"
+
+  // goroutine 2
+  s := <-c
+  fmt.Println(s) // "hello!"
+
+* Select
+
+A `select` statement blocks until communication can proceed.
+
+  select {
+  case n := <-in:
+    fmt.Println("received", n)
+  case out <- v:
+    fmt.Println("sent", v)
+  }
+
+Only the selected case runs.
+
+* Summary
+
+In just a few simple transformations we used Go's concurrency primitives to convert a
+
+- slow
+- sequential
+- failure-sensitive
+
+program into one that is
+
+- fast
+- concurrent
+- replicated
+- robust.
+
+* Tools
+
+* Go has great tools
+
+- gofmt and goimports
+- the go tool
+- godoc
+- IDE and editor support
+
+The language is designed for tooling.
+
+* gofmt and goimports
+
+Gofmt formats code automatically.  No options.
+
+Goimports updates import statements based on your workspace.
+
+Most people run these tools on save.
+
+.link http://play.golang.org/p/GPqra77cBK
+
+* The go tool
+
+The go tool builds Go programs from source in a conventional directory layout.
+No Makefiles or other configs.
+
+Fetch the `present` tool and its dependencies, build it, and install it:
+
+  % go get golang.org/x/tools/cmd/present
+
+Run it:
+
+  % present
+
+* godoc
+
+Generated documentation for the world's open-source Go code:
+
+.link http://godoc.org
+
+* Where to Go next
+
+Take the Go Tour online.
+
+.link http://tour.golang.org
+
+.link http://exercism.io/
+
+Lots more material.
+
+.link http://golang.org/wiki/Learn
+
+.link https://gobyexample.com/
+
+Great community.
+
+.link http://golang.org/project
