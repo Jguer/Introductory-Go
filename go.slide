@@ -1,7 +1,7 @@
 The Go programming language
 Instituto Superior Técnico, 28 February
 
-[[http://web.ist.utl.pt/joao.leao.guerreiro/][João Guerreiro]]
+[[http://blog.jguer.space][João Guerreiro]]
 
 me@jguer.space
 
@@ -65,9 +65,9 @@ Apcera, Bitbucket, bitly, Canonical, CloudFlare, Core OS, Digital Ocean, Docker,
 - Lmit
 - Uniplaces
 
-* Who uses Go?
-
 .link https://blog.golang.org/survey2017-results
+
+* What is Go?
 
 * Go intentionally leaves out many features
 
@@ -92,6 +92,8 @@ For more background on design:
 
 - [[http://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html][Less is exponentially more (Pike, 2012)]]
 - [[http://talks.golang.org/2012/splash.article][Go at Google: Language Design in the Service of Software Engineering (Pike, 2012)]]
+
+* Why do I use Go?
 
 * Basics
 
@@ -355,6 +357,8 @@ A `select` statement blocks until communication can proceed.
 
 Only the selected case runs.
 
+* Getting values from JSON
+.code -edit ./go/code/canteen.go /START1/,/STOP1/
 * Summary
 
 In just a few simple transformations we used Go's concurrency primitives to convert a

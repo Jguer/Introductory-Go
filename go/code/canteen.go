@@ -22,6 +22,7 @@ type nom struct {
 	} `json:"meal"`
 }
 
+// START1 OMIT
 // getJSON handles JSON retrieval and decoding to struct
 func getJSON(url string, target interface{}) error {
 	r, err := http.Get(url)
@@ -32,6 +33,8 @@ func getJSON(url string, target interface{}) error {
 
 	return json.NewDecoder(r.Body).Decode(target)
 }
+
+// STOP1 OMIT
 
 func handleError(err error) {
 	if err != nil {
