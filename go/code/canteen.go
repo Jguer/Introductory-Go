@@ -66,12 +66,11 @@ func main() {
 		for _, k := range socialget {
 			parsedTime, err := t.Parse("2/1/2006", k.Day)
 			handleError(err)
-			fmt.Println(parsedTime)
-			fmt.Println(today)
 			switch {
-			case parsedTime.Day() == parsedTime.Day():
+			case parsedTime.Day() == today.Day():
 				fmt.Println("Hoje,", k.Day, "foi:")
 				printMenu(k)
+				os.Exit(0)
 			}
 		}
 	case <-t.After(t.Second * 3):
