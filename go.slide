@@ -2,7 +2,6 @@ The Go programming language
 Instituto Superior Técnico, 28 February
 
 [[http://web.ist.utl.pt/joao.leao.guerreiro/][João Guerreiro]]
-[[hackerschool.io][HackerSchool]]
 
 me@jguer.space
 
@@ -59,6 +58,16 @@ Language stable as of Go 1, early 2012.
 .link http://golang.org/wiki/GoUsers
 
 Apcera, Bitbucket, bitly, Canonical, CloudFlare, Core OS, Digital Ocean, Docker, Dropbox, Facebook, Getty Images, GitHub, Heroku, Iron.io, Kubernetes, Medium, MongoDB services, Mozilla services, New York Times, pool.ntp.org, Secret, SmugMug, SoundCloud, Stripe, Square, Thomson Reuters, Tumblr, ...
+
+* Who uses Go in Portugal?
+- OLX
+- AppGeneration
+- Lmit
+- Uniplaces
+
+* Who uses Go?
+
+.link https://blog.golang.org/survey2017-results
 
 * Go intentionally leaves out many features
 
