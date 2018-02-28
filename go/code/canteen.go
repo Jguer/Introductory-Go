@@ -64,12 +64,14 @@ func main() {
 	case socialget := <-social:
 		//For each social meal
 		for _, k := range socialget {
-			t, err := t.Parse("02/01/2006", k.Day)
+			parsedTime, err := t.Parse("2/1/2006", k.Day)
 			handleError(err)
-			if t.Month() > today.Month() || t.Day() > today.Day() {
-				fmt.Println("Próximo dia no social", k.Day, "é:")
+			fmt.Println(parsedTime)
+			fmt.Println(today)
+			switch {
+			case parsedTime.Day() == parsedTime.Day():
+				fmt.Println("Hoje,", k.Day, "foi:")
 				printMenu(k)
-				break
 			}
 		}
 	case <-t.After(t.Second * 3):
